@@ -1,0 +1,26 @@
+
+Hammer.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+hammer3
+  rotate: false
+  xy: 1, 1
+  size: 139, 129
+  orig: 139, 129
+  offset: 0, 0
+  index: -1
+hammer1
+  rotate: false
+  xy: 142, 2
+  size: 133, 128
+  orig: 133, 128
+  offset: 0, 0
+  index: -1
+hammer2
+  rotate: false
+  xy: 277, 2
+  size: 133, 128
+  orig: 133, 128
+  offset: 0, 0
+  index: -1
