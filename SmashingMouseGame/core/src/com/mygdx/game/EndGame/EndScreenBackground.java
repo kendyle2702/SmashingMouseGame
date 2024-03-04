@@ -26,6 +26,11 @@ public class EndScreenBackground extends Actor {
         buttonRestart1 = new Texture(Gdx.files.internal("but_restart1.png"));
         buttonRestart2 = new Texture(Gdx.files.internal("but_restart2.png"));
 
+        bitmapFont.getData().setScale(1.5f);
+        bitmapFont.setColor(Color.ORANGE);
+        fontEndGame.setColor(Color.ORANGE);
+        fontEndGame.getData().setScale(2.5f);
+
         setBounds(Gdx.graphics.getWidth() / 2 + buttonRestart1.getWidth() / 2,
                 150, buttonRestart1.getWidth(),
                 buttonRestart1.getHeight());
@@ -59,10 +64,7 @@ public class EndScreenBackground extends Actor {
         batch.draw(endgameTexture, Gdx.graphics.getWidth() / 2 - endgameTexture.getWidth() / 2,
                 Gdx.graphics.getWidth() / 2 - endgameTexture.getWidth() / 2);
         batch.draw(buttonRestart1, Gdx.graphics.getWidth() / 2 + buttonRestart1.getWidth() / 2, 150);
-        bitmapFont.getData().setScale(1.5f);
-        bitmapFont.setColor(Color.ORANGE);
-        fontEndGame.setColor(Color.ORANGE);
-        fontEndGame.getData().setScale(2.5f);
+       
         fontEndGame.draw(batch, "END GAME", 230, 320);
         bitmapFont.draw(batch, "Score: " + point, 280, 280);
     }

@@ -1,4 +1,4 @@
-package com.mygdx.game.Entity;
+package com.mygdx.game.MainGame.Entity;
 
 public class Hole {
     private float holeX;

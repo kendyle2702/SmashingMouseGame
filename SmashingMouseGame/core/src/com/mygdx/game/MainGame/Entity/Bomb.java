@@ -1,4 +1,4 @@
-package com.mygdx.game.Entity;
+package com.mygdx.game.MainGame.Entity;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -16,11 +16,11 @@ public class Bomb extends Actor {
     private boolean isLive = true;
     private Music bomb;
 
-    public Bomb(Hammer hammer, float bombX, float bombY) {
+    public Bomb(Hammer hammer, float bombX, float bombY, String path1,String path2) {
         this.hammer = hammer;
 
-        bomb1 = new Texture(Gdx.files.internal("bomb1.png"));
-        bomb2 = new Texture(Gdx.files.internal("bomb2.png"));
+        bomb1 = new Texture(Gdx.files.internal(path1));
+        bomb2 = new Texture(Gdx.files.internal(path2));
         setSize(bomb1.getWidth(), bomb1.getHeight());
 
         this.bombX = bombX - bomb1.getWidth() / 2;

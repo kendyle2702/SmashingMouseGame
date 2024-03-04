@@ -1,8 +1,8 @@
-package com.mygdx.game.Input;
+package com.mygdx.game.MainGame.Input;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
-import com.mygdx.game.Entity.Hammer;
+import com.mygdx.game.MainGame.Entity.Hammer;
 
 public class InputProcessing extends InputAdapter {
     private Hammer hammer;

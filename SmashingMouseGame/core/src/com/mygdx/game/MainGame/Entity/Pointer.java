@@ -1,4 +1,4 @@
-package com.mygdx.game.Entity;
+package com.mygdx.game.MainGame.Entity;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -12,7 +12,8 @@ public class Pointer extends Actor {
     public Pointer(int point) {
         this.point = point;
         font = new BitmapFont();
-
+        font.getData().setScale(1.5f);
+        font.setColor(Color.ORANGE);
     }
 
     public int getPoint() {
@@ -25,14 +26,12 @@ public class Pointer extends Actor {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        font.getData().setScale(1.5f);
-        font.setColor(Color.ORANGE);
-        font.draw(batch, "Score: " + point, 400, 400);
+        
+        font.draw(batch, "Score: " + point, 400, 430);
     }
 
     @Override
     public void act(float delta) {
 
     }
-
 }

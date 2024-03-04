@@ -1,4 +1,4 @@
-package com.mygdx.game.Entity;
+package com.mygdx.game.MainGame.Entity;
 
 
 import com.badlogic.gdx.graphics.Color;
@@ -13,6 +13,8 @@ public class CountdownTime extends Actor {
 
     public CountdownTime(float totalTime) {
         this.font = new BitmapFont();
+        font.getData().setScale(1.5f);
+        font.setColor(Color.ORANGE);
         this.timeRemaining = totalTime;
     }
 
@@ -26,9 +28,8 @@ public class CountdownTime extends Actor {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        font.getData().setScale(1.5f);
-        font.setColor(Color.ORANGE);
-        font.draw(batch, String.format("Time: 00:%02d", (int) timeRemaining), 150, 400);
+        
+        font.draw(batch, String.format("Time: 00:%02d", (int) timeRemaining), 150, 430);
     }
 
     public boolean isTimeUp() {

@@ -1,9 +1,11 @@
-package com.mygdx.game.Entity;
+package com.mygdx.game.MainGame.Entity;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -16,18 +18,28 @@ public class Mouse extends Actor{
     private float mouseY;
     private boolean isLive = true;
     private int pointOfMouse;
+    private BitmapFont showPointOfMouse;
+    private float showPointTime;
+    private boolean isShowPoint = false;
     
     public Mouse(Hammer hammer,Pointer point, float mouseX, float mouseY,int pointOfMouse,String path1,String path2){
         this.hammer = hammer;
         this.point = point;
+
         this.pointOfMouse = pointOfMouse;
+        showPointTime = 3f;
+
+        showPointOfMouse = new BitmapFont();
+        showPointOfMouse.getData().setScale(2f);
+        showPointOfMouse.setColor(Color.YELLOW);
+
         mouse1Texture = new Texture(Gdx.files.internal(path1));
         mouse2Texture = new Texture(Gdx.files.internal(path2));
         setSize(mouse1Texture.getWidth(), mouse1Texture.getHeight());
         
         this.mouseX = mouseX - mouse1Texture.getWidth()/2;
         this.mouseY = mouseY;
-
+        
         setPosition(this.mouseX, this.mouseY);
         
         addListener(new InputListener(){
@@ -38,6 +50,7 @@ public class Mouse extends Actor{
                 addPoint();
                 mouse1Texture = mouse2Texture;   
                 setDownHammer();
+                isShowPoint = true;
 				return true;
             }
             @Override
@@ -66,11 +79,20 @@ public class Mouse extends Actor{
     @Override
     public void draw(Batch batch, float parentAlpha) {
         batch.draw(mouse1Texture, mouseX, mouseY);
-        setPosition(mouseX, mouseY);
+        if(isShowPoint){
+            showPointOfMouse.draw(batch,"+ " + pointOfMouse , mouseX+30, mouseY+100);
+        }
     }
     @Override
     public void act(float delta) {
-        
+        if(!isLive){
+            if(showPointTime > 0){
+                isShowPoint = true;
+            }
+            else{
+                isShowPoint = false;
+            }
+            showPointTime -= delta;
+        }
     }
-    
 }

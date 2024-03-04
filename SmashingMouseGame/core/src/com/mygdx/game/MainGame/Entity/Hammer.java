@@ -1,4 +1,4 @@
-package com.mygdx.game.Entity;
+package com.mygdx.game.MainGame.Entity;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -40,8 +40,8 @@ public class Hammer extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         if (isclick) {
-            Music hammer = Gdx.audio.newMusic(Gdx.files.internal("hammer.mp3"));
-            hammer.play();
+            Music hammerMusic = Gdx.audio.newMusic(Gdx.files.internal("hammer.mp3"));
+            hammerMusic.play();
             batch.draw(animation.getKeyFrame(elapsedTime, true), hammerX, hammerY);
             setPosition(hammerX, hammerY);
         }
