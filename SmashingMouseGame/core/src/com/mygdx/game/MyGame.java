@@ -50,6 +50,7 @@ public class MyGame extends Game {
         music.play();
 
         setScreen(startScreen);
+        
     }
     
 
