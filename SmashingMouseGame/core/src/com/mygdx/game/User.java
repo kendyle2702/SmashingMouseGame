@@ -7,6 +7,7 @@ public class User {
     public User(String username, int point) {
         this.username = username;
         this.point = point;
+        
     }
 
     public String getUsername() {
