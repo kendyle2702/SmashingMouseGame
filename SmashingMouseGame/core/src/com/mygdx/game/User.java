@@ -5,6 +5,7 @@ public class User {
     private int point;
     
     public User(String username, int point) {
+        
         this.username = username;
         this.point = point;
         
