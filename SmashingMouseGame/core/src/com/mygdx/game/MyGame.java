@@ -100,6 +100,7 @@ public class MyGame extends Game {
         }
         else{
             this.username = username;
+            
         }
     }
 
