@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+
 public class User {
     private String username;
     private int point;
